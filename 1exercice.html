@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICE</title>
+</head>
+<body>
+    <h1>EXERCICE 1</h1>
+    <script>
+        let nb1= prompt("Tapez un nombre");
+        let nb2 = prompt("Tapez un nombre");
+        let résultat = nb1 - nb2;
+        console.log(résultat)
+
+        if(résultat){
+            document.write(nb1 + " - " + nb2 + " = " + résultat);
+        }else{ 
+        alert("Vauillez taper 2 nombres, svp !");
+        }
+        // solution 2 : fixe le bug pour résultat = 0
+
+        if( isNaN(résultat)){
+            alert("Vauillez taper 2 nombres, svp !");
+        } else{
+            document.write(nb1 + " - " + nb2 + " = " + résultat);
+        }
+        document.write("<br>");
+    </script>
+</body>
+</html>

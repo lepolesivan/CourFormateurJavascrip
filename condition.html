@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONDITION</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Les STRUCTURES CONDITIONNELLES</h1>
+    <p>Lorsque l'on veut que du code soit exécuté si une certaine
+        condition est vrai, on va utiliser une structure IF</p>
+    <p>Syntaxe :</p>
+<pre>
+    <code>
+        if (<i>condition</i>){
+            <i>bloc d'instruction...</i>
+        }
+    </code>
+</pre>
+    <h2>SINON</h2>
+    <p>On peut définir le code qui sera exécuté si la condition est fausse.</p>
+    <p>Syntaxe :</p>
+<pre>
+    <code>
+        if (<i>condition</i>){
+            <i>bloc d'instruction...</i>
+        }else{
+            <i>bloc d'instruction...</i>
+        }
+    </code>
+</pre>
+    <h2>OPERATEURS DE COMPARAISON</h2>
+    <ul>
+        <li>inférieur : <code>&lt;</code></li>
+        <li>inférieur ou égual : <code>&lt;=</code></li>
+        <li>supérieur : <code>&gt;</code></li>
+        <li>supérieur ou égual : <code>&gt;=</code></li>
+        <li>égual à : <code>==</code></li>
+        <li>strictement égual : <code>===</code></li>
+        <li>différent de : <code>!=</code></li>
+        <li>strictement différent de : <code>!==</code></li>
+    </ul>
+    <h2>BOOLEEN</h2>
+    <p>Dans les parenthèses de if, il faut une expression booléennes. Quelque soit
+        l'expression, javascript va le convertir en booléen. Selon le type de l'expression,
+        une valeur est considérée comme <code>false</code>, les autres sont considérée comme <code>true</code>.
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Valeur false</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>string</td>
+                <td>chaîne de caractère vide <code>""</code></td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td><code>0</code>, <code>NaN</code></td>
+            </tr>
+            <tr>
+                <td>boolean</td>
+                <td><code>false</code></td>
+            </tr>
+            <tr>
+                <td>null</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>undefined</td>
+                <td>undefined</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>OPERATEURS LOGIQUES</h2>
+    <P>Les opérateurs logiques s'utilisent avec des expressions booléennes et retourne un résultat booléen.
+        Ils sont utilisés quand on a une condition constituée de plusieurs conditions.
+    </P>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Opérateur</th>
+                <th>Signification</th>
+                <th>Explication</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&&</td>
+                <td>AND (ET)</td>
+                <td>les 2 conditions doivent être vraies en même temps</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>OR (OU)</td>
+                <td>Au moins 1 des 2 conditions doit être vraie</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>NOT (NON)</td>
+                <td>Inverse d'une valeur booléenne</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>L'opérateur NOT <code>!</code> est un opérateur <i>unaire</i> 
+        (C'est-à-dire qu'il ne s'applique que sur 1 seule expression, 
+        contrairement aux opérateurs binaires qui ont besoins de 2 expressions).
+    </p>
+    <h2>STRUCTURE SWITCH</h2>
+<pre>
+    <code>
+        SWITCH(<i>expression</i>){
+            case <i>valeur1</i>:
+            <i>bloc d'instructions 1...</i>
+            break;
+
+            case <i>valeur2</i>:
+            <i>bloc d'instructions 2...</i>
+            break;
+            ...
+
+            default:
+                <i>bloc d'instructions</i>
+        }
+    </code>
+</pre>
+
+    <h2>OPERATEUR TERNAIRE ou IF INLINE</h2>
+    <p>on peut utiliser l'opérateur ternaire lorsque la valeur d'une expression
+        déprend d'une condition.</p>
+    <p>Syntaxe :</p>
+<pre>
+    <code>
+        <i>condition</i> ? <i>valeur_si_condition_vraie</i> : <i>valeur_si_condition_fausse</i>
+    </code>
+</pre>
+    <hr>
+    <script src="js/condition.js"></script>
+</body>
+</html>

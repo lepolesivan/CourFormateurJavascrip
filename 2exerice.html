@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <script src="js/function.js"></script>
+</head>
+<body>
+    <script>
+        // 1
+        function superieur(a, b){
+            /*
+            if( a > b ) {
+                return true;
+            } else {
+                return false;
+            }
+            */
+            return a > b;
+        }
+        
+        function exo1(nb1, nb2) {
+            if(superieur(nb1, nb2) ){
+            ecrireLigne(nb1 + " est supérieur à " + nb2);
+            } else {
+            ecrireLigne(nb1 + " est inférieur ou égal à " + nb2);
+            }
+        }
+
+        let nb1 = 15, nb2 = 7;
+
+        exo1(nb1, nb2);
+        // if( superieur(nb1, nb2) ) {
+        //     ecrireLigne(nb1 + " est supérieur à " + nb2);
+        // } else {
+        //     ecrireLigne(nb1 + " est inférieur ou égal à " + nb2);
+        // }
+
+        nb1 = 52;
+        nb2 = 324;
+        exo1(nb1, nb2);
+        // if( superieur(nb1, nb2) ) {
+        //     ecrireLigne(nb1 + " est supérieur à " + nb2);
+        // } else {
+        //     ecrireLigne(nb1 + " est inférieur ou égal à " + nb2);
+        // }
+
+        exo1(9, 10);
+        // nb1 = 9;
+        // nb2 = 10;
+
+        // if( superieur(nb1, nb2) ) {
+        //     ecrireLigne(nb1 + " est supérieur à " + nb2);
+        // } else {
+        //     ecrireLigne(nb1 + " est inférieur ou égal à " + nb2);
+        // }
+
+        nb1 = 4;
+        nb2 = -52;
+        exo1(nb1, nb2);
+        // if( superieur(nb1, nb2) ) {
+        //     ecrireLigne(nb1 + " est supérieur à " + nb2);
+        // } else {
+        //     ecrireLigne(nb1 + " est inférieur ou égal à " + nb2);
+        // }
+
+        // 2
+        document.write("<hr>");
+        function plusGrand(a, b){
+            /*
+            return a > b;
+            if(a > b){
+                return a;
+            }else{
+                return b;
+            }
+            */
+
+            /*         
+            if(a > b){
+                return a;
+                }
+           return b;
+           */
+          return a > b ? a : b;
+        }
+
+        nb1 = 15; nb2 = 7;
+        ecrireLigne("La plus grande valeur entre " + nb1 + " et " + nb2 + " est " + plusGrand(nb1, nb2));
+        nb1 = 52; nb2 = 324;
+        ecrireLigne("La plus grande valeur entre " + nb1 + " et " + nb2 + " est " + plusGrand(nb1, nb2));
+        nb1 = 4; nb2 = -52;
+        ecrireLigne("La plus grande valeur entre " + nb1 + " et " + nb2 + " est " + plusGrand(nb1, nb2));
+        nb1 = 9; nb2 = 10;
+        ecrireLigne("La plus grande valeur entre " + nb1 + " et " + nb2 + " est " + plusGrand(nb1, nb2));
+        document.write("<hr>");
+        //3
+        nombres = [ 15, 7, 52, 324, 4, -52, 9, 10 ];
+
+        ecrireLigne("La dernière valeur est " + derniereValeur(nombres));
+        document.write("<hr>");
+        //4
+        notes = [ 12, 17, 4, 15, 20, 5 ];
+
+        ecrireLigne("La plus petite valeur du tableau [" + nombres + "] est " + plusPetiteValeur(nombres));
+        ecrireLigne("La plus petite valeur du tableau [" + notes + "] est " + plusPetiteValeur(notes));
+        document.write("<hr>");
+        // 5
+
+        ecrireLigne("Le montant de la remise est de " + (montantRemise(200,20)));
+        document.write("<hr>");
+        // 6
+        
+        ecrireLigne("Le montant après remise est de " + prixSolde(10, 20));
+        document.write("<hr>");
+
+        // 7
+
+        /*function puissanceN( valeur1, puissance){
+            let a = 0;
+            while(a <= puissance){
+                a++;
+            }
+            return a
+        }
+
+        console.log(puissanceN(2, 4));*/
+        let valeur1= 5
+        let puissance = 10;
+        let a;
+        for(a = 1; a <= puissance; a++){
+            document.write(valeur1)
+        }
+        console.log(a)
+    </script>
+</body>
+</html>

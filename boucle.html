@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUCLES</title>
+</head>
+<body>
+    <h1>STRUCTURE ITERATIVES</h1>
+    <h2>FOR</h2>
+    <p>Syntaxe</p>
+    <pre><code>
+for <i>initialisation</i>; <i>condition</i>; <i>incrémentation</i> {
+    <i>bloc d'instruction</i>
+}
+    </code></pre>
+
+    <script>
+        for( let i = 0; i <= 10; i++ ){
+            console.log(i);
+        }
+
+        // exo : afficher tout les nombres entre 12 et 32
+
+        for(let nb = 12; nb <= 32; nb++){
+            console.log(nb)
+        }
+        //quelle est la valeur de j
+        let j= 0;
+        console.log("nb vaut ", j); // j vaut 33
+
+        
+        for(let j = 0; j < 10 ; j++){
+            console.log("bonjour");
+        }
+        // quelle est la valeur de j
+        console.log("j vaut maintenant ", j); // j vaut 33
+
+
+        var k = 0;
+        for(k = 12; k <= 32; k++){
+            console.log(k);
+        }
+        console.log("k vaut ",k); //k vaut 33
+
+        for(k = 0; k < 10; k++){
+            console.log("bonjour");
+        }
+        console.log("k vaut maintenant ", k); // k vaut 10
+
+        // EXERCICES : Afficher tous les nombres pairs de 6 à 28
+        for(let i = 6; i <= 28; i+=2) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+
+        /* on peut utiliser le modulo % pour savoir si un nombre est pair :
+            nombre % 2 == 0     le nombre est pair
+            nombre % 2 == 1     le nombre est impair
+        */
+        for(let i = 6; i <= 28; i++) {
+            if( i % 2 == 0 ) {
+                document.write(i + " ");
+            }
+        }
+
+
+        /*
+        L'instruction
+            i++;
+        est un raccourci pour l'instruction
+            i = i + 1;
+            
+        De même l'instruction
+            i += 2;
+        est un raccourci pour l'instruction
+
+        Cette notation raccourcie fonctionne pour +, -, /, *, %
+        */
+
+        /*EXEMPLE DE BOUCLE INFINI
+        let i = 10;
+
+        for( i = 9; i< 10; i--){
+            document.write(i)
+        }
+        */
+    </script>
+
+    <hr>
+    <h2>WHILE</h2>
+    <p>Syntaxe :</p>
+    <pre>
+        <code>
+            while(<i>condition</i>){
+                <i>bloc d'instruction...</i>
+            }
+        </code>
+    </pre>
+    <p>Comme pour la boucle FOR, tant que la condition est vrai, le bloc d'instruction est exécuté.</p>
+    <p>La sortie de la boucle n'est pas forcément lié au nombre de tours de boucles.</p>
+
+    <script>
+        //Demander à l'utilisateur de taper un nombre. Recommenceer tant qu'il n'a pas tapé le nombre 3
+        let nombre;
+        /*
+        while(nombre != 3){
+            nombre = prompt("Tapez un nombre, svp");
+        }
+
+        let compteur = 0;
+        while(compteur <= 10){
+            document.write(compteur++ + " - ");
+        }
+
+        while(compteur <= 10){
+            document.write(++compteur + " - ");
+        }*/
+    </script>
+
+    <h2>DO WHILE</h2>
+    <p>Syntaxe :</p>
+    <pre>
+        <code>
+            do{
+                <i>bloc d'instruction...</i>
+            } while(<i>condition</i>)
+        </code>
+    </pre>
+    <p>La seule différence avec la boucle WHILE, c'est que la condition est évaluée après le bloc d'instructions.</p>
+    <p>Donc, avec une bouocle DO WHILE, quelle que soit la condition, il y a au moins un tour de boucle qui est effectué.
+        Avec la boucle WHILE, si la condition est fausse dès le début, on n'effectue aucun tour.
+    </p>
+
+    <script>
+        //EXO : écrire la boucle qui permet de taper un nombre avec DO WHILE
+        let nb;
+        do{
+            nb = prompt("Tapez un nombre, svp");
+            } while(nb != 3)
+    </script>
+    
+    <h2> FOR...OF</h2>
+    <p>Boucle qui permet de parcourir un tableau.</p>
+    <p>Syntaxe :</p>
+    <pre>
+        <code>
+            for(let <i>valeur</i> of <i>nomVariableTableau</i>){
+                <i>bloc d'instruction</i>
+            }
+        </code>
+    </pre>
+
+    <p>La boucle FOR... OF permet de parcourir un tableau pour récupérer ses valeurs. A chaque tour de boucle,
+        la variable <i>valeur</i> contient la prochaine valeur du tableau. </p>
+
+    <p>⚠ on ne peut pas récupérer les indices dans cette boucle.</p>
+</body>
+</html>

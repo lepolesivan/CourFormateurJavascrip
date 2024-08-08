@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <style>
+        form {
+            width: 80vw;
+            top: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        [type="number"] {
+            background-color: lightblue;
+        }
+        a {
+            padding: 5px 10px;
+            border: 2px inset lightgray;
+        }
+        form > div:first-child {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="calculatrice.js" defer></script>
+</head>
+<body>
+    <form>
+        <input type="number" name="nombre1" placeholder="1er nombre">
+        <select name="operateur">
+            <option></option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="nombre2" placeholder="2èmenombre">
+        <button type="submit">=</button>
+        <input type="text" name="resultat" placeholder="résultat" disabled="disabled">
+    </form>
+</body>
+</html>

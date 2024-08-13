@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices 1 DOM</title>
+    <style>
+        div{ margin: 100px 0 0 0; }
+
+        div  img{
+            height: 100px; /* hauteur */
+            width: 100px; /* largeur */
+            border: 5px solid #ccc; /* bordure */
+            float: left; /* effet flotant (côte à côte) */
+            margin: 15px; /* marges autour */
+            transition: margin 0.5s; /* durée de transition lorsque l'on survole l'élément (hover) */
+        }        
+    </style>
+</head>
+<body>
+    <p id="text"></p>
+    <div>
+        <img src="img/image.jpg" alt="Un vaisseau star wars1">
+        <img src="img/image.jpg" alt="Un vaisseau star wars2">
+        <img src="img/image.jpg" alt="Un vaisseau star wars3">
+        <img src="img/image.jpg" alt="Un vaisseau star wars4">
+    </div>
+    <h2></h2>
+
+    <script>
+         /* EXERCICES
+        1. Quand la souris passe au-dessus de la 1ère image, 
+            mettre une bordure à l'image : 5px d'épaisseur,
+            couleur bleue.
+        2. Quand la souris sort de l'image, la bordure devient rouge
+        3. - quand on clique sur la 2ième image, 
+        ajoutez une balise h2 dans la même div qui contient 
+        les images avec le texte "clic sur l'image".
+        - quand on reclique sur la même image, le texte 
+        est vide.
+        */
+
+        let image = document.querySelector("div img:first-child");
+        image.addEventListener("mouseover", function(mousevEvent){
+            image.style.border = "5px solid blue" ;
+        });
+
+        image.addEventListener("mouseout", function(mouseEvent){
+            image.style.borderColor = "red";
+        });
+
+        let h2 = document.querySelector("h2");
+        let image2 = document.querySelector("div img:nth-child(2)");
+        image2.addEventListener("click", function(mouseEvent){
+            if(h2.innerHTML != ""){
+                h2.innerHTML = "";
+            }else {
+                h2.innerHTML = "clic sur l'image";
+            }
+        });
+
+        let image3 = document.querySelector("div img:nth-child(3)");
+        image3.addEventListener("click", function(event){
+            this.style.height = "200px";
+            this.style.width = "200px";
+        });
+
+        let image4 = document.querySelector("div img:last-child");
+        image4.addEventListener("click", function(event){
+            if( this.style.width == ""){
+                this.style.height = "120px";
+                this.style.width = "120px";
+            }else {
+                let h,w;
+                h = this.style.height;
+                w = this.style.width;
+                h = Number(h.replace("px", ""));
+                w = Number(w.replace("px", ""));
+                h += 20;
+                w += 20;
+                
+                this.style.width = w + "px";
+                this.style.height = `${h}px`;
+            }
+            
+            console.log(image4);
+        });
+        let t = setInterval(function(){ image4.click();}, -100);
+        img1.addEventListener("click", function(event){
+            clearInterval(t);
+        })
+
+        let taille = document.querySelector("#text");
+        taille.innerHTML = setInterval(function(){ image4.click(), taille.innerHTML = image4.style.width}, -100);
+    </script>
+</body>
+</html>

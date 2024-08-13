@@ -24,39 +24,65 @@ elementTbody.innerHTML += "<tr><td>2</td><td>un livre</td><td>Anne Onyme</td></t
 // EXO : remplir la table HTML avce les données de la variable "livres"
 displayRecord(livres);
 
-/* CORRECTION :
-
+ //CORRECTION :
+/*
 for(let i = 0; i < livres.lenght; i++){
     console.log(livres[i][0], livres[i][1], livres[i][2]);
     let ligne = "<tr>";
     ligne += "<td>" + livres[i][0] +"</td>";
     ligne += "<td>" + livres[i][1] +"</td>";
     ligne += "<td>" + livres[i][2] +"</td>";
-    let ligne = "</tr>";
+    ligne += "<td> <a id='livre" + livres[i][0] + "' class='btn btn-danger'><i class='fa fa-trash'></i> </a></td>";
+    ligne = "</tr>";
     elementTbody.innerHTML += ligne;
-}*/
-
+}
+*/
 // EXO
-
+// on récupère l'élèment FORM
 let formulaire = document.querySelector("#formulaire");
 let inputId = document.querySelector("#idLivre");
 let inputTitle = document.querySelector("#title");
 let inputAuteur = document.querySelector("#auteur");
 
+// J'ajoute un écouteur d'évènement sur les formulaire, pour l'évènement "submit"
 formulaire.addEventListener("submit", function(eventSubmit){
+    // je bloque la soumission du formulaire avec la variable 'event' qui représente l'évènement submit
     eventSubmit.preventDefault();
+
     let index = Number(inputId.value);
     let auteur = inputAuteur.value;
     let title = inputTitle.value;
-    livres.push([index, title, auteur]);
+
+    let livresDejaPresent = -1;
+    let livre = [Number(inputId.value),inputTitle.value,inputAuteur.value]
+
     for(let i = 0; i < livres.length; i++ ){
-        livres[0];
-        if(index == livres[0]){
-            livresDejaLu = livres[0];
-            console.log(livresDejaLu)
+        if(index == livres[i][0]){
+            livresDejaPresent = i;
+            break; // permet de sortir du boucle
         }
     }
+    if( livresDejaPresent >= 0){
+        livres[livresDejaPresent] = livre
+    }else{
+        livres.push(livre)
+    }
 
+    // affficher les livres dans la table HTML
     displayRecord(livres);
+
+    // je vide les valeurs des inputs
+    inputId.value = "";
+    inputAuteur.value = "";
+    inputTitle.value = "";
 })
 
+function supprimerLivre(idASupprimer) {
+    for(let i = 0; i < livres.length; i++) {
+        if( idASupprimer == livres[i][0] ) {
+            livres.splice(i, 1);  // supprime 1 valeur du tableau à partir de l'indice i
+            break;
+        }
+    }
+    displayRecord(livres);
+}

@@ -39,3 +39,28 @@ document.write("La taxe sur un produit de 100€ est " + taxe + "€<br>");
 let prix = 200;
 let calcul = tva(prix);
 document.write("La taxe sur un produit de " + prix + "€ est " + calcul + "€<br>");
+
+
+// Ecouteur d'évènement :  Différence entre les fonctions et les fonctions fléchées
+
+/* 
+    • avec une fonction standard, le mot-clé this représente l'objet qui a déclenché l'évènement.
+    
+	• avec une fonction fléchée, le mot-clé this représente l'objet Window.
+    	Pour récupérer l'objet qui a déclenché l'évènement, on utlise
+        	event.target
+	
+*/
+
+let h1 = document.querySelector("h1");
+h1.addEventListener("mouseover", function(event){
+    console.log("évènement mouseover function", this);
+    this.style.color = "red";
+})
+
+h1.addEventListener("mouseout", (event) => {
+    console.log("évènement mouseout fonction fléchée", this);
+    console.log("évènement mouseout fonction fléchée", event, event.target);
+    event.target.style.color = "green";
+
+})

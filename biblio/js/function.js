@@ -41,6 +41,6 @@ function prixSolde(prix, pourcentage){
 function displayRecord(argument){
     elementTbody.innerHTML = "";
     for (const element of argument) {
-        elementTbody.innerHTML += "<tr><td>" + element[0] + "</td>" + "<td>" + element[1] + "</td>" + "<td>" + element[2] + "</td></tr>";
+        elementTbody.innerHTML += "<tr><td>" + element[0] + "</td>" + "<td>" + element[1] + "</td>" + "<td>" + element[2] + "</td><td> <a id='livre" + argument[1][0] + "' class='btn btn-danger' onclick='supprimerLivre(" +  argument[1][0] + ")'><i class='fa fa-trash'></i> </a></td></tr>";
     }  
 }

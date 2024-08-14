@@ -93,10 +93,11 @@
             
             console.log(image4);
         });
-        /*let t = setInterval(function(){ image4.click();}, -100);
+        
+        let t = setInterval(function(){ image4.click();}, -100);
         img1.addEventListener("click", function(event){
             clearInterval(t);
-        })*/
+        })
 
         //let taille = document.querySelector("#text");
         //taille.innerHTML = setInterval(function(){ image4.click(), taille.innerHTML = image4.style.width}, -100);
@@ -120,7 +121,14 @@
         retirer.addEventListener("click", function(event){
             image2.className = "";
         })
-        
+        /*
+        btAjouter.addEventListener("click", function(evt) {
+            image2.classList.add("cadre");
+        })
+        btEnlever.addEventListener("click", function(evt) {
+            image2.classList.remove("cadre");
+        })
+        */
     </script>
 </body>
 </html>

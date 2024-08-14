@@ -14,7 +14,11 @@
             float: left; /* effet flotant (côte à côte) */
             margin: 15px; /* marges autour */
             transition: margin 0.5s; /* durée de transition lorsque l'on survole l'élément (hover) */
-        }        
+        }
+        .cadre{
+            border: 10px inset black;
+            padding: 30px 10px;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +30,11 @@
         <img src="img/image.jpg" alt="Un vaisseau star wars4">
     </div>
     <h2></h2>
-
+    <div>
+        <button id="ajouter">ajouter cadre</button>
+        <button id="retirer">enlever cadre</button>
+    </div>
+    
     <script>
          /* EXERCICES
         1. Quand la souris passe au-dessus de la 1ère image, 
@@ -85,13 +93,34 @@
             
             console.log(image4);
         });
-        let t = setInterval(function(){ image4.click();}, -100);
+        /*let t = setInterval(function(){ image4.click();}, -100);
         img1.addEventListener("click", function(event){
             clearInterval(t);
-        })
+        })*/
 
-        let taille = document.querySelector("#text");
-        taille.innerHTML = setInterval(function(){ image4.click(), taille.innerHTML = image4.style.width}, -100);
+        //let taille = document.querySelector("#text");
+        //taille.innerHTML = setInterval(function(){ image4.click(), taille.innerHTML = image4.style.width}, -100);
+
+         /* EXO : 
+            • dans le css, ajoutez la classe 'cadre' qui ajoute une bordure de 10px de largeur,
+                    style 'inset', couleur noire et un padding de 30px en haut et en bas, et 10px sur
+                    les côtés.
+            • dans l'html, ajoutez 2 boutons, l'un avec le texte 'ajouter cadre', l'autre avec
+                le texte 'enlever cadre'
+             • dans le js, lorsque l'on clique sur 'ajouter cadre', vous devez ajouter la classe
+                cadre à la 2ième image. Si on clique sur 'enlever cadre', vous devez enlever la 
+                classe cadre à la 2ième image*/
+
+        let ajouter = document.querySelector("#ajouter");
+        let retirer = document.querySelector("#retirer");
+        
+        ajouter.addEventListener("click", function(event){
+            image2.className = "cadre";
+        })
+        retirer.addEventListener("click", function(event){
+            image2.className = "";
+        })
+        
     </script>
 </body>
 </html>
